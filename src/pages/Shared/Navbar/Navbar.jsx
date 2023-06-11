@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/rhythmic-hub.png'
+import { WiDaySunny } from 'react-icons/wi'
+import { HiUserCircle } from 'react-icons/hi'
 const Navbar = () => {
     const menuItems = <>
         <li><Link>Home</Link></li>
@@ -29,12 +31,18 @@ const Navbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="navbar-end hidden lg:flex">
+                <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold">
                         {
                             menuItems
                         }
                     </ul>
+                </div>
+                <div className='navbar-end flex gap-3'>
+                    <button>
+                        <WiDaySunny className='text-4xl'></WiDaySunny>
+                    </button>
+                    <HiUserCircle className='text-4xl'></HiUserCircle>
                 </div>
             </div>
         </div>
