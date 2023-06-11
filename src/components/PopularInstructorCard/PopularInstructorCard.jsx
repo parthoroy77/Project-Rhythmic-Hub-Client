@@ -5,10 +5,19 @@ const PopularInstructorCard = ({ item }) => {
     return (
         <>
             <div className=" bg-base-100 border-2 rounded-md shadow-md hover:shadow-xl">
-                <figure><img src={instructorImg} alt="Shoes" /></figure>
-                <div className="my-5 flex justify-center gap-4">
-                    <button className='btn btn-accent font-bold text-black'>Name: {instructorName}</button>
-                    <button className='btn btn-active'>Student Enrolled: {enrolled}</button>
+                <figure className='px-5 py-4'>
+                    <img src={instructorImg} className='rounded-2xl' alt="Shoes" />
+                </figure>
+                <div className="mb-5 text-center">
+                    <h2 className='text-2xl text-black font-bold font-serif'>{instructorName}</h2>
+                    <div className='flex justify-evenly my-2 items-center'>
+                        <button className='btn font-bold'>
+                            Enrolled: {enrolled}
+                        </button>
+                        <button className='btn font-bold'>
+                            Available Seats: {availableSeats}
+                        </button>
+                    </div>
                 </div>
             </div>
         </>

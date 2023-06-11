@@ -8,10 +8,10 @@ const PopularClassCard = ({ item }) => {
                 <figure><img src={classImg} className='rounded' alt="Shoes" /></figure>
                 <div className="mt-4">
                     <h2 className="text-center text-blue-700 font-bold text-3xl">{className}</h2>
-                    <div className='flex gap-2 justify-center mt-4'>
-                        <button className='btn btn-sm'>Available Seats: {availableSeats}</button>
-                        <button className='btn btn-sm'>Enrolled: {enrolled}</button>
-                        <button className='btn btn-sm'>Price: ${price}</button>
+                    <div className=' space-y-3 mt-4'>
+                        <button className='btn w-full btn-sm'>Available Seats: {availableSeats}</button>
+                        <button className='btn w-full btn-sm'>Enrolled: {enrolled}</button>
+                        <button className='btn w-full btn-sm'>Price: ${price}</button>
                     </div>
                 </div>
             </div>
