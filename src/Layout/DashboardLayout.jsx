@@ -40,12 +40,12 @@ const DashboardLayout = () => {
                             <Link>Payment History</Link>
                         </li> */}
                         {/* instructors */}
-                        {/* <li>
-                            <Link>Add A Class</Link>
+                        <li>
+                            <Link to='/dashboard/addClass'>Add A Class</Link>
                         </li>
                         <li>
                             <Link>My Classes</Link>
-                        </li> */}
+                        </li>
                     </ul>
 
                 </div>
