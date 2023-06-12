@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/rhythmic-hub.png'
-import { WiDaySunny } from 'react-icons/wi'
+import { WiDaySunny, WiNightAltCloudy, WiNightAltHail, WiNightAltSnow } from 'react-icons/wi'
 import { HiUserCircle } from 'react-icons/hi'
 import useAuth from '../../../hooks/useAuth';
 import { toast } from 'react-hot-toast';
 const Navbar = () => {
     const { user, logOut } = useAuth();
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const toggleTheme = () => {
+        setIsDarkMode(!isDarkMode);
+    };
     const handleLogOut = () => {
         logOut().then(result => toast.success("Log Out Successfully")).catch(err => toast.error(err.message))
     }
@@ -20,8 +24,14 @@ const Navbar = () => {
                 : <><li><Link to={'/login'}>Login</Link></li></>
         }
     </>
+    useEffect(() => {
+        const htmlElement = document.getElementById('theme');
+        if (htmlElement) {
+            htmlElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+        }
+    }, [isDarkMode]);
     return (
-        <div className='px-4 lg:px-24 shadow-lg rounded-lg bg-white'>
+        <div className='px-4 lg:px-24 shadow-lg rounded-lg '>
             <div className="navbar rounded-md ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -49,9 +59,21 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='navbar-end flex gap-3'>
-                    <button>
-                        <WiDaySunny className='text-4xl'></WiDaySunny>
+                    <button onClick={toggleTheme}>
+                        {
+                            isDarkMode ? <WiDaySunny className='text-4xl'></WiDaySunny>
+                                : <WiNightAltCloudy className='text-4xl'></WiNightAltCloudy>
+                        }
+                        
+                        
                     </button>
+                    {
+                        user && <label tabIndex={0} title={user.displayName} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-14 rounded-full">
+                                <img src={user.photoURL} />
+                            </div>
+                        </label>
+                    }
                 </div>
             </div>
         </div>

@@ -104,6 +104,7 @@ const ManageClass = () => {
                                         </button>
                                         <Link to={`/dashboard/feedback/${item._id}`}>
                                             <button
+                                                disabled={item.status !== 'deny'}
                                                 className='btn btn-xs btn-primary'>Feedback
                                             </button>
                                         </Link>
