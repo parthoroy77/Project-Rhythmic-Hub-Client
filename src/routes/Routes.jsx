@@ -5,13 +5,15 @@ import Login from "../pages/Login/Login"
 import Registration from "../pages/Registration/Registration"
 import Classes from "../pages/Classes/Classes"
 import Instructors from "../pages/Instructors/Instructors"
+import DashboardLayout from "../Layout/DashboardLayout"
+import ErrorPage from "../pages/ErrorPage/ErrorPage"
 
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
-        errorElement: <div>Error</div>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -33,6 +35,13 @@ const routes = createBrowserRouter([
                 path: '/instructors',
                 element: <Instructors></Instructors>
             }
+        ]
+    },
+    {
+        path: 'dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            
         ]
     }
 ])
