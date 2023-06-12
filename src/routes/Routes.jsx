@@ -7,6 +7,7 @@ import Classes from "../pages/Classes/Classes"
 import Instructors from "../pages/Instructors/Instructors"
 import DashboardLayout from "../Layout/DashboardLayout"
 import ErrorPage from "../pages/ErrorPage/ErrorPage"
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers"
 
 
 const routes = createBrowserRouter([
@@ -40,8 +41,12 @@ const routes = createBrowserRouter([
     {
         path: 'dashboard',
         element: <DashboardLayout></DashboardLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
-            
+            {
+                path: 'manageUsers',
+                element: <ManageUsers></ManageUsers>
+            } 
         ]
     }
 ])

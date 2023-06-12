@@ -8,7 +8,7 @@ const SocialLogin = () => {
     const handleGoogleLogin = () => {
         googleLogin().then(result => {
             const loggedUser = result.user;
-            const user = { name: loggedUser.displayName, email: loggedUser.email };
+            const user = { name: loggedUser.displayName, email: loggedUser.email, role: 'student' };
             fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json'},
@@ -21,11 +21,8 @@ const SocialLogin = () => {
     return (
         <>
             <div className='flex gap-4 justify-center'>
-                <button className='btn btn-info flex items-center'>
+                <button onClick={handleGoogleLogin} className='btn w-2/4 btn-info flex items-center'>
                     <FaGoogle></FaGoogle> <span>Sign In</span>
-                </button>
-                <button className='btn flex  btn-info items-center'>
-                    <FaGithub></FaGithub> <span>Sign In</span>
                 </button>
             </div>   
         </>
