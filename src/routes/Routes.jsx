@@ -10,6 +10,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage"
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers"
 import AddClass from "../pages/Dashboard/AddClass/AddClass"
 import ManageClass from "../pages/Dashboard/ManageClass/ManageClass"
+import Feedback from "../components/Feedback/Feedback"
 
 
 const routes = createBrowserRouter([
@@ -56,6 +57,10 @@ const routes = createBrowserRouter([
             {
                 path: 'manageClass',
                 element: <ManageClass></ManageClass>
+            },
+            {
+                path: 'feedback/:id',
+                element: <Feedback></Feedback>
             }
         ]
     }

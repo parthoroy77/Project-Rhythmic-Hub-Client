@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { FaChessKing } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ManageClass = () => {
     const { data: classes = [], refetch } = useQuery({
@@ -21,6 +23,9 @@ const ManageClass = () => {
                 refetch()
             }
         })
+    }
+    const handleFeedback = (item) => {
+        console.log(item);
     }
     return (
         <div className='flex flex-col items-center justify-center py-16'>
@@ -97,9 +102,11 @@ const ManageClass = () => {
                                             onClick={() => handleStatus(item, 'deny')}
                                             className='btn btn-xs btn-accent'>Deny
                                         </button>
-                                        <button
-                                            className='btn btn-xs btn-primary'>Feedback
-                                        </button>
+                                        <Link to={`/dashboard/feedback/${item._id}`}>
+                                            <button
+                                                className='btn btn-xs btn-primary'>Feedback
+                                            </button>
+                                        </Link>
                                     </td>
                                 </tr>)
                             }
