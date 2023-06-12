@@ -27,7 +27,7 @@ const DashboardLayout = () => {
                             <Link to={'/dashboard/manageUsers'}>Manage Users</Link>
                         </li>
                         <li>
-                            <Link>Manage CLasses</Link>
+                            <Link to={'/dashboard/manageClass'}>Manage CLasses</Link>
                         </li>
                         {/* student */}
                         {/* <li>
