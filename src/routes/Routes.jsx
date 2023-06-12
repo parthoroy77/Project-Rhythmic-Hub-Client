@@ -22,7 +22,7 @@ const routes = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: '/register',
+                path: '/registration',
                 element: <Registration></Registration>
             },
             {
