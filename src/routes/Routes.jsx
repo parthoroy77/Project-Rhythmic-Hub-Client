@@ -11,6 +11,7 @@ import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers"
 import AddClass from "../pages/Dashboard/AddClass/AddClass"
 import ManageClass from "../pages/Dashboard/ManageClass/ManageClass"
 import Feedback from "../components/Feedback/Feedback"
+import PrivateRoute from "./PrivateRoute"
 
 
 const routes = createBrowserRouter([
@@ -42,8 +43,8 @@ const routes = createBrowserRouter([
         ]
     },
     {
-        path: 'dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {

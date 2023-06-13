@@ -4,7 +4,7 @@ const PopularInstructorCard = ({ item }) => {
     const { _id, className, classImg, instructorName, instructorEmail, instructorImg, status, availableSeats, price, enrolled } = item;
     return (
         <>
-            <div className=" bg-base-100 border-2 flex flex-col justify-between rounded-md shadow-md hover:shadow-xl">
+            <div className=" bg-base-100 border-dashed border-[3px] flex flex-col justify-between rounded-md shadow-md hover:shadow-xl">
                 <figure className='px-5 py-4'>
                     <img src={instructorImg} className='rounded-2xl' alt="Shoes" />
                 </figure>

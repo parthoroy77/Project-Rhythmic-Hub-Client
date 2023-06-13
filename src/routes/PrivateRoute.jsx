@@ -1,9 +1,11 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import { DotLoader } from 'react-spinners';
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useAuth();
+    const location = useLocation()
     if (loading) {
         return <div className='h-[600px] flex items-center justify-center'>
             <DotLoader color="#36d7b7" />
@@ -13,7 +15,7 @@ const PrivateRoute = ({ children }) => {
         return children;
     }
     return (
-        <Navigate to={'/login'}>
+        <Navigate to={'/login'} state={{from: location}}>
             
         </Navigate>
     );

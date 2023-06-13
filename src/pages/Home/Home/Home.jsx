@@ -7,9 +7,9 @@ const Home = () => {
     return (
         <div className='px-6 lg:px-24'>
             <Banner></Banner>
+            <ClassesList></ClassesList>
             <PopularClass></PopularClass>
             <PopularInstructors></PopularInstructors>
-            <ClassesList></ClassesList>
         </div>
     );
 };

@@ -1,19 +1,20 @@
 import React from 'react';
 import { FaArrowRight, FaGuitar } from 'react-icons/fa';
 import { GiDrum, GiFlute, GiGrandPiano, GiSaxophone, GiTrumpet, GiViolin, GiXylophone } from 'react-icons/gi'
+import { Link } from 'react-router-dom';
 const ClassesList = () => {
     return (
-        <div className='my-16 '>
+        <div className='my-20 '>
             <div className='space-y-10'>
-                <div className='flex items-center justify-evenly'>
-                    <h1 className='text-3xl font-bold font-serif'>Our class, is where your passions <br /> come into play every day.</h1>
+                <div className='flex flex-col lg:flex-row items-center gap-3 justify-evenly'>
+                    <h1 className='lg:text-5xl font-bold text-xl font-serif'>Our class, is where your passions <br /> come into play every day.</h1>
                     <div className='flex items-center border-black border-[1px] px-8 py-4 hover:bg-sky-400 bg-orange-200 text-black gap-2 text-2xl'>
-                        <button>See All Class </button>
+                        <Link to={'/classes'}><button>See All Class </button></Link>
                         <FaArrowRight></FaArrowRight>
                     </div>
                 </div>
-                <div className='grid grid-cols-2 gap-12  lg:grid-cols-4'>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                <div className='grid grid-cols-1 gap-5  lg:grid-cols-4'>
+                    <div className='hover:bg-amber-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <FaGuitar ></FaGuitar>
@@ -25,7 +26,7 @@ const ClassesList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                    <div className='hover:bg-sky-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <GiGrandPiano ></GiGrandPiano>
@@ -37,7 +38,7 @@ const ClassesList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                    <div className='hover:bg-amber-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <GiViolin ></GiViolin>
@@ -51,7 +52,7 @@ const ClassesList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                    <div className='hover:bg-sky-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <GiFlute ></GiFlute>
@@ -63,7 +64,7 @@ const ClassesList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                    <div className='hover:bg-amber-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <GiDrum ></GiDrum>
@@ -75,7 +76,7 @@ const ClassesList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                    <div className='hover:bg-sky-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <GiTrumpet ></GiTrumpet>
@@ -87,7 +88,7 @@ const ClassesList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                    <div className='hover:bg-amber-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <GiSaxophone ></GiSaxophone>
@@ -99,7 +100,7 @@ const ClassesList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='hover:bg-sky-300 px-5 rounded-lg py-5'>
+                    <div className='hover:bg-sky-300 border-2 px-5 rounded-lg py-5'>
                         <div className='space-y-3'>
                             <div className='flex text-2xl font-mono gap-3'>
                                 <GiXylophone></GiXylophone>

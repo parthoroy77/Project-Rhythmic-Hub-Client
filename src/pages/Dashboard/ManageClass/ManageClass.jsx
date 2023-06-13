@@ -27,6 +27,7 @@ const ManageClass = () => {
     const handleFeedback = (item) => {
         console.log(item);
     }
+    console.log(classes);
     return (
         <div className='flex flex-col items-center justify-center py-16'>
             <div className='my-6'>
@@ -52,7 +53,7 @@ const ManageClass = () => {
                         </thead>
                         <tbody>
                             {
-                                classes.map((item, index) => <tr key={item._id}>
+                                classes?.map((item, index) => <tr key={item._id}>
                                     <td>
                                         {index + 1}
                                     </td>
