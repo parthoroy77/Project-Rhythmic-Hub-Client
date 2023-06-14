@@ -21,7 +21,7 @@ const MyEnrolledClass = () => {
             </div>
             <div>
                 <div className="overflow-x-auto border-2  rounded-md px-2 py-4 shadow-lg my-5">
-                    <table className="table w-[400px] lg:w-[800px]">
+                    <table className="table w-[400px] font-semibold lg:w-[800px]">
                         {/* head */}
                         <thead>
                             <tr>
