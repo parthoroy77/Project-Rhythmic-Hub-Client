@@ -12,6 +12,8 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass"
 import ManageClass from "../pages/Dashboard/ManageClass/ManageClass"
 import Feedback from "../components/Feedback/Feedback"
 import PrivateRoute from "./PrivateRoute"
+import MyClass from "../pages/Dashboard/MyClass/MyClass"
+import UpdateClass from "../pages/Dashboard/UpdateClass/UpdateClass"
 
 
 const routes = createBrowserRouter([
@@ -62,6 +64,14 @@ const routes = createBrowserRouter([
             {
                 path: 'feedback/:id',
                 element: <Feedback></Feedback>
+            },
+            {
+                path: 'myClass',
+                element: <MyClass></MyClass>
+            },
+            {
+                path: 'updateClass/:id',
+                element: <UpdateClass></UpdateClass>
             }
         ]
     }

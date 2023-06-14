@@ -1,18 +1,22 @@
 import React from 'react';
 import Lottie from 'lottie-react'
 import animation from '../../assets/Animation/login.json'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from 'react-icons/fa'
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-hot-toast';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 const Login = () => {
-    const {loginUser} = useAuth()
+    const { loginUser } = useAuth()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
+    const navigate = useNavigate()
     const onSubmit = data => {
         loginUser(data.email, data.password).then(result => {
             toast.success('Login Successfully')
+            navigate(from, { replace: true })
         }).catch(err => toast.error(err.message))
     }
     return (
@@ -28,7 +32,7 @@ const Login = () => {
                     <h3 className='text-center text-3xl font-bold'>Login Now</h3>
                     <div className="form-control">
                         <input type="text"
-                            {...register('email', {required: true})}
+                            {...register('email', { required: true })}
                             placeholder="Email"
                             className="input  rounded-sm bg-slate-100 font-semibold w-[80%] mx-auto" />
                     </div>

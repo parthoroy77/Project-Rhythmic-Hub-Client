@@ -3,9 +3,11 @@ import { Link, Outlet } from 'react-router-dom';
 import logo from '../assets/logo/rhythmic-hub.png'
 import useAuth from '../hooks/useAuth';
 import useAdmin from '../hooks/useAdmin';
+import useRole from '../hooks/useRole';
 const DashboardLayout = () => {
     const { user } = useAuth();
-    const [isAdmin] = useAdmin();
+    // const [isAdmin] = useAdmin();
+    const [isRole] = useRole()
     return (
         <>
             <div className="drawer lg:drawer-open">
@@ -25,9 +27,9 @@ const DashboardLayout = () => {
                                 <img src={logo} className='w-16' alt="" />
                                 <h2 className='text-2xl font-bold'>Rhythmic Hub</h2>
                             </div>
-                            <div className='flex justify-evenly gap-2 items-center'>
+                            <div className='flex flex-col-reverse justify-evenly gap-2 items-center'>
                                 <img src={user.photoURL} className='rounded-lg w-28' alt="" />
-                                <h4>Hi, {user.displayName}</h4>
+                                <h4 className='text-xl'>Hi, {user.displayName}</h4>
                             </div>
                             <hr className='border-3 border-blue-800 my' />
                         </div>
@@ -37,7 +39,7 @@ const DashboardLayout = () => {
                             </Link>
                         </li>
                         {
-                            isAdmin && <>
+                            isRole === 'admin' && <>
                                 <li>
                                     <Link to={'/dashboard/manageUsers'}>Manage Users</Link>
                                 </li>
@@ -47,22 +49,30 @@ const DashboardLayout = () => {
                             </>
                         }
                         {/* student */}
-                        {/* <li>
-                            <Link>My Selected Class</Link>
-                        </li>
-                        <li>
-                            <Link>Payment</Link>
-                        </li>
-                        <li>
-                            <Link>Payment History</Link>
-                        </li> */}
+                        {
+                            isRole === 'student' && <>
+                                <li>
+                                    <Link>My Selected Class</Link>
+                                </li>
+                                <li>
+                                    <Link>Payment</Link>
+                                </li>
+                                <li>
+                                    <Link>Payment History</Link>
+                                </li>
+                            </>
+                        }
                         {/* instructors */}
-                        <li>
-                            <Link to='/dashboard/addClass'>Add A Class</Link>
-                        </li>
-                        <li>
-                            <Link to={'/'}>My Classes</Link>
-                        </li>
+                        {
+                            isRole === 'instructor' && <>
+                                <li>
+                                    <Link to='/dashboard/addClass'>Add A Class</Link>
+                                </li>
+                                <li>
+                                    <Link to={'/dashboard/myClass'}>My Classes</Link>
+                                </li>
+                            </>
+                        }
                     </ul>
 
                 </div>

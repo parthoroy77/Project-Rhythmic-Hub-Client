@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import PopularClassCard from '../../../components/PopularClassCard/PopularClassCard';
+import { useQuery } from '@tanstack/react-query';
 
 const PopularClass = () => {
-    const [classes, setClasses] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/classes').then(res => res.json()).then(data => setClasses(data))
-    }, [])
+    const { data: classes = [] } = useQuery({
+        queryKey: ['classes'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/classes');
+            return res.json()
+        }
+    })
     return (
         <div className='my-12 '>
             <div className='text-center font-semibold'>
