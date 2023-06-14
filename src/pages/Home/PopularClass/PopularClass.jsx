@@ -19,7 +19,7 @@ const PopularClass = () => {
             </div>
             <div className='grid grid-cols-1 gap-6 lg:grid-cols-3'>
                 {
-                    classes.slice(0,6).map(item => <PopularClassCard
+                    classes.filter(items => items.status === 'approve').map(item => <PopularClassCard
                         key={item._id}
                         item={item}
                     ></PopularClassCard>)
