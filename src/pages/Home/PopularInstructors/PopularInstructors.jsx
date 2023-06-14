@@ -10,7 +10,6 @@ const PopularInstructors = () => {
             return res.json()
         }
     })
-    console.log(instructors);
     return (
         <div className='my-12'>
             <div className='text-center font-semibold'>

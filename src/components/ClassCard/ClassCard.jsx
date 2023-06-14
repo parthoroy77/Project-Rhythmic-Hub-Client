@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 const ClassCard = ({ item }) => {
     const [isRole] = useRole();
     const { user } = useAuth();
-    console.log(isRole);
     const { _id, className, classImg, instructorName, instructorEmail, instructorImg, status, availableSeats, price, enrolled } = item;
     const navigate = useNavigate()
     const handleSelectClass = (classItem) => {

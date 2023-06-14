@@ -60,7 +60,6 @@ const CheckOutForm = ({ paymentItem }) => {
             }
             axiosSecure.post('/payment', { savedPayment })
                 .then(res => {
-                    console.log(res.data);
                     if (res.data.insertedResult.insertedId && res.data.deletedResult.deletedCount > 0 && res.data.updatedResult.modifiedCount > 0) {
                         toast.success(`Payment Success full`)
                     }

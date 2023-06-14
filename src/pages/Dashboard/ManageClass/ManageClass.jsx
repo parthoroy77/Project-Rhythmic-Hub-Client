@@ -17,17 +17,13 @@ const ManageClass = () => {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
         }).then(res => res.json()).then(data => {
-            console.log(data);
             if (data.modifiedCount) {
                 toast.success(`Class ${status}`)
                 refetch()
             }
         })
     }
-    const handleFeedback = (item) => {
-        console.log(item);
-    }
-    console.log(classes);
+    
     return (
         <div className='flex flex-col items-center justify-center py-16'>
             <div className='my-6'>
@@ -103,7 +99,7 @@ const ManageClass = () => {
                                             onClick={() => handleStatus(item, 'deny')}
                                             className='btn btn-xs btn-accent'>Deny
                                         </button>
-                                        <Link to={`/dashboard/feedback/${item._id}`}>
+                                        <Link>
                                             <button
                                                 disabled={item.status === 'pending'}
                                                 className='btn btn-xs btn-primary'>Feedback
