@@ -8,10 +8,10 @@ const ClassCard = ({ item }) => {
     const { user } = useAuth();
     const { _id, className, classImg, instructorName, instructorEmail, instructorImg, status, availableSeats, price, enrolled } = item;
     const handleSelectClass = (classItem) => {
-        const {_id, classImg, className, price} = classItem
+        const {_id, classImg, className, price, instructorName} = classItem
         if (user && user.email) {
             const selectedClass = {
-                classId: _id, classImg, className, email: user.email, price
+                classId: _id, classImg, className, email: user.email, price, instructorName
             }
             fetch('http://localhost:5000/selectedClass', {
                 method: 'POST',

@@ -52,7 +52,7 @@ const DashboardLayout = () => {
                         {
                             isRole === 'student' && <>
                                 <li>
-                                    <Link>My Selected Class</Link>
+                                    <Link to={'/dashboard/selectedClass'}>My Selected Class</Link>
                                 </li>
                                 <li>
                                     <Link>Payment</Link>

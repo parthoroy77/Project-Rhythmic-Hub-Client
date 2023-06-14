@@ -14,6 +14,7 @@ import Feedback from "../components/Feedback/Feedback"
 import PrivateRoute from "./PrivateRoute"
 import MyClass from "../pages/Dashboard/MyClass/MyClass"
 import UpdateClass from "../pages/Dashboard/UpdateClass/UpdateClass"
+import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass"
 
 
 const routes = createBrowserRouter([
@@ -72,6 +73,10 @@ const routes = createBrowserRouter([
             {
                 path: 'updateClass/:id',
                 element: <UpdateClass></UpdateClass>
+            },
+            {
+                path: 'selectedClass',
+                element: <SelectedClass></SelectedClass>
             }
         ]
     }
