@@ -6,7 +6,7 @@ const PopularInstructors = () => {
     const { data: instructors = [] } = useQuery({
         queryKey: ['instructor'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/instructor');
+            const res = await fetch('http://localhost:5000/popularInstructors');
             return res.json()
         }
     })

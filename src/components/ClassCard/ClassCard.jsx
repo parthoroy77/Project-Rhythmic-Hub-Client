@@ -27,7 +27,7 @@ const ClassCard = ({ item }) => {
     }
     return (
         <>
-            <div className={`card bg-base-100 border-2 rounded-md ${availableSeats === 0 ? 'border-4 border-red-600' : ''}`}>
+            <div className={`card bg-base-100 border-2 rounded-md ${availableSeats === 0 ? 'border-2 bg-red-200 border-red-600' : ''}`}>
                 <figure><img src={classImg} className='w-full h-[250px]' alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-mono">{className}</h2>

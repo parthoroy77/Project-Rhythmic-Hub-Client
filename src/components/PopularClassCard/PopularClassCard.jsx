@@ -5,7 +5,7 @@ const PopularClassCard = ({ item }) => {
     return (
         <>
             <div className="card  bg-base-100 shadow-xl image-full">
-                <figure><img src={classImg} className='w-full' alt="Shoes" /></figure>
+                <figure><img src={instructorImg} className='w-full' alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-center text-4xl text-white font-semibold font-mono">{className}</h2>
                     <p></p>
