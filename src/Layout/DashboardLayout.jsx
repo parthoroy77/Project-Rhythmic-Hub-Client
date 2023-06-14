@@ -55,10 +55,10 @@ const DashboardLayout = () => {
                                     <Link to={'/dashboard/selectedClass'}>My Selected Class</Link>
                                 </li>
                                 <li>
-                                    <Link>Payment</Link>
+                                    <Link to={'/dashboard/enrolledClass'}>My Enrolled Class</Link>
                                 </li>
                                 <li>
-                                    <Link>Payment History</Link>
+                                    <Link to={`/dashboard/paymentHistory`}>Payment History</Link>
                                 </li>
                             </>
                         }

@@ -15,6 +15,9 @@ import PrivateRoute from "./PrivateRoute"
 import MyClass from "../pages/Dashboard/MyClass/MyClass"
 import UpdateClass from "../pages/Dashboard/UpdateClass/UpdateClass"
 import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass"
+import Payment from "../pages/Dashboard/Payment/Payment"
+import MyEnrolledClass from "../pages/Dashboard/MyEnrolledClass/MyEnrolledClass"
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory"
 
 
 const routes = createBrowserRouter([
@@ -77,6 +80,18 @@ const routes = createBrowserRouter([
             {
                 path: 'selectedClass',
                 element: <SelectedClass></SelectedClass>
+            },
+            {
+                path: 'payment',
+                element: <Payment></Payment>
+            },
+            {
+                path: 'enrolledClass',
+                element: <MyEnrolledClass></MyEnrolledClass>
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
             }
         ]
     }

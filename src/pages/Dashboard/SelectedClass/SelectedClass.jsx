@@ -88,9 +88,12 @@ const SelectedClass = () => {
                                         }
                                     </td>
                                     <td>
-                                        <button className='btn bg-green-500 hover:bg-green-400 border-0'>
-                                            PAY
-                                        </button>
+                                        <Link to={`/dashboard/payment`} state={{item: item}}>
+                                            <button
+                                                className='btn bg-green-500 hover:bg-green-400 border-0'>
+                                                PAY
+                                            </button>
+                                        </Link>
                                     </td>
                                     <td className=''>
                                         <button
