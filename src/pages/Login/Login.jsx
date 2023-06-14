@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Lottie from 'lottie-react'
 import animation from '../../assets/Animation/login.json'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaGithub, FaGoogle } from 'react-icons/fa'
+import { FaEye, FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from 'react-icons/fa'
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-hot-toast';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 const Login = () => {
     const { loginUser } = useAuth()
+    const [visible, setVisible] = useState(true)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
@@ -36,14 +37,18 @@ const Login = () => {
                             placeholder="Email"
                             className="input  rounded-sm bg-slate-100 font-semibold w-[80%] mx-auto" />
                     </div>
-                    <div className="form-control">
-                        <input type="text"
+                    <div className="form-control relative">
+                        <input type={visible ? 'password' : 'text'}
                             {...register('password', { required: true })}
                             placeholder="Password"
                             className="input  rounded-sm bg-slate-100 font-semibold w-[80%] mx-auto" />
-                        <label className="label ml-16">
+                        {
+                            visible ? <FaEye onClick={()=>setVisible(false)} className='absolute right-[80px] top-3 text-2xl' />
+                                :    <FaRegEyeSlash onClick={() => setVisible(true)} className='absolute right-[80px] top-3 text-2xl' />
+                        }
+                        {/* <label className="label ml-16">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
+                        </label> */}
                     </div>
                     <div className="form-control mt-6 w-[80%]  mx-auto">
                         <input type='submit' value={'Login'} className="btn bg-sky-400 text-black hover:bg-sky-300" />

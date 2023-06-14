@@ -70,7 +70,7 @@ const Registration = () => {
                         {errors.email && <small className='ml-20 mt-2 text-red-500'>Email is required</small>}
                     </div>
                     <div className="form-control">
-                        <input type="text"
+                        <input type="password"
                             {...register('password',
                                 {
                                     required: true,
@@ -84,7 +84,7 @@ const Registration = () => {
                         {errors.password?.type === 'pattern' && <small className='ml-20 mt-2 text-red-500'>Password is Must Have 1 uppercase, lowercase, special character</small>}
                     </div>
                     <div className="form-control">
-                        <input type="text"
+                        <input type="password"
                             {...register('confirmPassword',
                                 {
                                     required: true,
@@ -98,7 +98,7 @@ const Registration = () => {
                         {errors.confirmPassword?.type === 'pattern' && <small className='ml-20 mt-2 text-red-500'>Password is Must Have 1 uppercase, lowercase, special character</small>}
                     </div>
                     <div className="form-control mt-6 w-[80%]  mx-auto">
-                        <input type='submit' value={'Login'} className="btn bg-sky-400 text-black hover:bg-sky-300" />
+                        <input type='submit' value={'Register'} className="btn bg-sky-400 text-black hover:bg-sky-300" />
                     </div>
                 </form>
                 <div className='text-center space-y-3 mt-3'>
