@@ -4,6 +4,10 @@ import logo from '../assets/logo/rhythmic-hub.png'
 import useAuth from '../hooks/useAuth';
 import useAdmin from '../hooks/useAdmin';
 import useRole from '../hooks/useRole';
+import { FaBookReader, FaHome, FaStoreAlt, FaUsers } from 'react-icons/fa';
+import { BiMessageSquareAdd, BiSelectMultiple } from 'react-icons/bi';
+import { MdClass, MdPayments } from 'react-icons/md';
+
 const DashboardLayout = () => {
     const { user } = useAuth();
     // const [isAdmin] = useAdmin();
@@ -20,7 +24,7 @@ const DashboardLayout = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full font-semibold bg-teal-300 text-[16px] space-y-4  text-base-content">
+                    <ul className="menu p-4 w-80 text-[18px] h-full font-semibold bg-teal-300 space-y-4  text-base-content">
                         {/* Sidebar content here */}
                         <div className='text-center space-y-3'>
                             <div className='flex items-center'>
@@ -35,16 +39,16 @@ const DashboardLayout = () => {
                         </div>
                         <li>
                             <Link to={'/'}>
-                                Home
+                                 <FaHome className='text-2xl'/> Home
                             </Link>
                         </li>
                         {
                             isRole === 'admin' && <>
                                 <li>
-                                    <Link to={'/dashboard/manageUsers'}>Manage Users</Link>
+                                    <Link to={'/dashboard/manageUsers'}> <FaUsers className='text-2xl' /> Manage Users</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/dashboard/manageClass'}>Manage CLasses</Link>
+                                    <Link to={'/dashboard/manageClass'}><FaBookReader className='text-2xl' /> Manage CLasses</Link>
                                 </li>
                             </>
                         }
@@ -52,13 +56,13 @@ const DashboardLayout = () => {
                         {
                             isRole === 'student' && <>
                                 <li>
-                                    <Link to={'/dashboard/selectedClass'}>My Selected Class</Link>
+                                    <Link to={'/dashboard/selectedClass'}><BiSelectMultiple className='text-2xl '/> My Selected Class</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/dashboard/enrolledClass'}>My Enrolled Class</Link>
+                                    <Link to={'/dashboard/enrolledClass'}><FaStoreAlt className='text-2xl'/> My Enrolled Class</Link>
                                 </li>
                                 <li>
-                                    <Link to={`/dashboard/paymentHistory`}>Payment History</Link>
+                                    <Link to={`/dashboard/paymentHistory`}><MdPayments className='text-2xl'></MdPayments> Payment History</Link>
                                 </li>
                             </>
                         }
@@ -66,10 +70,10 @@ const DashboardLayout = () => {
                         {
                             isRole === 'instructor' && <>
                                 <li>
-                                    <Link to='/dashboard/addClass'>Add A Class</Link>
+                                    <Link to='/dashboard/addClass'><BiMessageSquareAdd className='text-2xl'/> Add A Class</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/dashboard/myClass'}>My Classes</Link>
+                                    <Link to={'/dashboard/myClass'}><MdClass className='text-2xl'/> My Classes</Link>
                                 </li>
                             </>
                         }

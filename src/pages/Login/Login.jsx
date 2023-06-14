@@ -38,7 +38,8 @@ const Login = () => {
                             className="input  rounded-sm bg-slate-100 font-semibold w-[80%] mx-auto" />
                     </div>
                     <div className="form-control relative">
-                        <input type={visible ? 'password' : 'text'}
+                        <input
+                            type={visible ? 'password' : 'text'}
                             {...register('password', { required: true })}
                             placeholder="Password"
                             className="input  rounded-sm bg-slate-100 font-semibold w-[80%] mx-auto" />

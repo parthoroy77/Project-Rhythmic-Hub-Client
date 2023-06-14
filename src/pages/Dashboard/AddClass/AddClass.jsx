@@ -17,13 +17,14 @@ const AddClass = () => {
             body: formData
         }).then(res => res.json()).then(imgRes => {
             if (imgRes.success) {
+                const userImg = user.photoURL
                 const imgURL = imgRes.data.display_url;
                 const { name, image, availableSeats, price } = data;
                 const newClass = {
                     className: name, classImg: imgURL,
                     instructorName: user.displayName,
                     instructorEmail: user.email,
-                    instructorImg: user.image,
+                    instructorImg: userImg,
                     price: parseFloat(price),
                     availableSeats: parseFloat(availableSeats),
                     enrolled: 0, status: 'pending'
@@ -88,7 +89,7 @@ const AddClass = () => {
                             <label className="label">
                                 <span className="label-text">Available Seats</span>
                             </label>
-                            <input type="text"
+                            <input type="number"
                                 {...register('availableSeats', { required: true })}
                                 placeholder="Available Seats" className="input input-bordered" />
                         </div>
@@ -96,7 +97,7 @@ const AddClass = () => {
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="text"
+                            <input type="number"
                                 {...register('price', { required: true })}
                                 placeholder="Price" className="input input-bordered" />
                         </div>
