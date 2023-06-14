@@ -12,7 +12,7 @@ const Instructors = () => {
         }
     })
     return (
-        <div className='px-4 lg:px-24  my-10'>
+        <div className='px-4 lg:px-24  my-16'>
             <div className=' mx-auto text-center'>
                 <h2 className='text-3xl font-semibold font-mono'>
                     Meet Our Expert Instructors <br /> Guiding You Towards Success

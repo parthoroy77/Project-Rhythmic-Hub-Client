@@ -61,12 +61,12 @@ const ManageUsers = () => {
                                     <td className='flex flex-col gap-2'>
                                         <button
                                             onClick={()=>updateRole(user, 'admin')}
-                                            disabled={user.role !== 'student'}
+                                            disabled={user.role === 'admin'}
                                             className='btn btn-xs btn-info'>Make Admin
                                         </button>
                                         <button
                                             onClick={() => updateRole(user, 'instructor')}
-                                            disabled={user.role !== 'student'}
+                                            disabled={user.role === 'instructor'}
                                             className='btn btn-xs btn-accent'>Make Instructor
                                         </button>
                                     </td>

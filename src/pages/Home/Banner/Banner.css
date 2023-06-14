@@ -1,7 +1,7 @@
 .banner-container{
-    background-image: url(../../../assets//banner/banner1.jpg), linear-gradient(90deg, #695372, #1b0525ad);
+    background-image: url(../../../assets//banner/banner.webp), linear-gradient(90deg, #020202, rgba(0, 0, 0, 0.678));
     background-blend-mode: overlay;
-    height: 80vh;
+    width: 100%;
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;

@@ -2,13 +2,20 @@ import React from 'react';
 import useRole from '../../hooks/useRole';
 import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const ClassCard = ({ item }) => {
     const [isRole] = useRole();
     const { user } = useAuth();
+    console.log(isRole);
     const { _id, className, classImg, instructorName, instructorEmail, instructorImg, status, availableSeats, price, enrolled } = item;
+    const navigate = useNavigate()
     const handleSelectClass = (classItem) => {
-        const {_id, classImg, className, price, instructorName} = classItem
+        const { _id, classImg, className, price, instructorName } = classItem;
+        if (!user) {
+            toast.error("Please Login First");
+            navigate('/login')
+        }
         if (user && user.email) {
             const selectedClass = {
                 classId: _id, classImg, className, email: user.email, price, instructorName
@@ -40,8 +47,9 @@ const ClassCard = ({ item }) => {
                     <div className="">
                         <button
                             onClick={()=>handleSelectClass(item)}
-                            disabled={isRole === 'admin' || availableSeats === 0}
-                            className="btn w-full btn-info font-bold">Select Class</button>
+                            disabled={isRole !== 'student' || availableSeats === 0}
+                            className="btn w-full btn-info font-bold">Select Class
+                        </button>
                     </div>
                 </div>
             </div>

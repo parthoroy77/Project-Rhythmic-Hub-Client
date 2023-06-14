@@ -11,7 +11,7 @@ const Classes = () => {
         }
     })
     return (
-        <div className='px-4 lg:px-24'>
+        <div className='px-4 lg:px-24 my-16'>
             <div className=' mx-auto text-center'>
                 <h2 className='text-3xl'>
                     Unveiling the Melodic Journey of Our Musical Class
