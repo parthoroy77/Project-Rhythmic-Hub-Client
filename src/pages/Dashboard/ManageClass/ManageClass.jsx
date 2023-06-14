@@ -8,12 +8,12 @@ const ManageClass = () => {
     const { data: classes = [], refetch } = useQuery({
         queryKey: ['classes'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/classes');
+            const res = await fetch('https://rhythmic-hub-server.vercel.app/classes');
             return res.json()
         }
     })
     const handleStatus = (item, status) => {
-        fetch(`http://localhost:5000/classes/updateStatus?id=${item._id}&status=${status}`, {
+        fetch(`https://rhythmic-hub-server.vercel.app/classes/updateStatus?id=${item._id}&status=${status}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
         }).then(res => res.json()).then(data => {

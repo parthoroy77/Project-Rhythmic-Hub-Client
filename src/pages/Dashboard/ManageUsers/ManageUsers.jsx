@@ -10,12 +10,12 @@ const ManageUsers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await axiosSecure.get('http://localhost:5000/users');
+            const res = await axiosSecure.get('https://rhythmic-hub-server.vercel.app/users');
             return res.data;
         }
     })
-    const updateRole = (user ,role) => {
-        fetch(`http://localhost:5000/users/roleUpdate?id=${user._id}&role=${role}`, {
+    const updateRole = (user, role) => {
+        fetch(`https://rhythmic-hub-server.vercel.app/users/roleUpdate?id=${user._id}&role=${role}`, {
             method: 'PATCH'
         }).then(res => res.json()).then(data => {
             if (data.modifiedCount) {
@@ -60,7 +60,7 @@ const ManageUsers = () => {
                                     </td>
                                     <td className='flex flex-col gap-2'>
                                         <button
-                                            onClick={()=>updateRole(user, 'admin')}
+                                            onClick={() => updateRole(user, 'admin')}
                                             disabled={user.role === 'admin'}
                                             className='btn btn-xs btn-info'>Make Admin
                                         </button>

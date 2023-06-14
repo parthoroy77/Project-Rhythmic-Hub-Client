@@ -3,13 +3,13 @@ import { toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 
 const Feedback = () => {
-    const {id} = useParams()
+    const { id } = useParams()
     const [feedback, setFeedback] = useState('');
     const handleFeedback = () => {
-        fetch(`http://localhost:5000/classes/feedback?id=${id}`, {
+        fetch(`https://rhythmic-hub-server.vercel.app/classes/feedback?id=${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ feedback})
+            body: JSON.stringify({ feedback })
         }).then(res => res.json()).then(data => {
             if (data.modifiedCount > 0) {
                 toast.success('Feedback Sent')
@@ -24,7 +24,7 @@ const Feedback = () => {
                     <div className='divider mb-0'></div>
                 </div>
                 <div>
-                    <textarea onBlur={(e)=>setFeedback(e.target.value)} className="textarea textarea-accent h-[200px] w-full" placeholder="Feedback"></textarea>
+                    <textarea onBlur={(e) => setFeedback(e.target.value)} className="textarea textarea-accent h-[200px] w-full" placeholder="Feedback"></textarea>
                     <button onClick={handleFeedback} className='w-full btn btn-accent'>Feedback</button>
                 </div>
             </div>

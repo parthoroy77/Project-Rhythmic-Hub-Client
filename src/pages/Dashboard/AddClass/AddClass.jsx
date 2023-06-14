@@ -29,7 +29,7 @@ const AddClass = () => {
                     availableSeats: parseFloat(availableSeats),
                     enrolled: 0, status: 'pending'
                 }
-                fetch('http://localhost:5000/classes', {
+                fetch('https://rhythmic-hub-server.vercel.app/classes', {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(newClass)

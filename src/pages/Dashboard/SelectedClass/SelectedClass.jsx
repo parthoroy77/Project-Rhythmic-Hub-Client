@@ -27,7 +27,7 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteClass?id=${id}`, { method: 'DELETE' }).then(res => res.json()).then(data => {
+                fetch(`https://rhythmic-hub-server.vercel.app/deleteClass?id=${id}`, { method: 'DELETE' }).then(res => res.json()).then(data => {
                     if (data.deletedCount > 0) {
                         Swal.fire(
                             'Deleted!',
@@ -88,7 +88,7 @@ const SelectedClass = () => {
                                         }
                                     </td>
                                     <td>
-                                        <Link to={`/dashboard/payment`} state={{item: item}}>
+                                        <Link to={`/dashboard/payment`} state={{ item: item }}>
                                             <button
                                                 className='btn bg-green-500 hover:bg-green-400 border-0'>
                                                 PAY

@@ -7,7 +7,7 @@ const Instructors = () => {
     const { data: instructors = [] } = useQuery({
         queryKey: ['classes'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/instructors');
+            const res = await fetch('https://rhythmic-hub-server.vercel.app/instructors');
             return res.json()
         }
     })

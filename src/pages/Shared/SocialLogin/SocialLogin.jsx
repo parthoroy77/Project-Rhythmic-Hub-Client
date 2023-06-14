@@ -13,7 +13,7 @@ const SocialLogin = () => {
         googleLogin().then(result => {
             const loggedUser = result.user;
             const user = { name: loggedUser.displayName, email: loggedUser.email, role: 'student' };
-            fetch('http://localhost:5000/users', {
+            fetch('https://rhythmic-hub-server.vercel.app/users', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(user)

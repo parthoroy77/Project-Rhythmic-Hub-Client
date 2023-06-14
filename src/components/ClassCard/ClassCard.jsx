@@ -20,7 +20,7 @@ const ClassCard = ({ item }) => {
             const selectedClass = {
                 classId: _id, classImg, className, email: user.email, price, instructorName
             }
-            fetch('http://localhost:5000/selectedClass', {
+            fetch('https://rhythmic-hub-server.vercel.app/selectedClass', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(selectedClass)
@@ -42,11 +42,12 @@ const ClassCard = ({ item }) => {
                     <div className='text-[18px] font-semibold'>
                         <p>Instructor Name: {instructorName}</p>
                         <p>Available Seats: {availableSeats}</p>
+                        <p>Student Enrolled: {enrolled}</p>
                         <p>Price: {price}</p>
                     </div>
                     <div className="">
                         <button
-                            onClick={()=>handleSelectClass(item)}
+                            onClick={() => handleSelectClass(item)}
                             disabled={isRole !== 'student' || availableSeats === 0}
                             className="btn w-full btn-info font-bold">Select Class
                         </button>

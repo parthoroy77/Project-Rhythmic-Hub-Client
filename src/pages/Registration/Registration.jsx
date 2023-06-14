@@ -18,7 +18,7 @@ const Registration = () => {
                 const loggedUser = result.user;
                 profileUpdate(data.name, data.photo).then(result => {
                     const user = { name: data.name, email: data.email, role: 'student', image: data.photo }
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://rhythmic-hub-server.vercel.app/users', {
                         method: "POST",
                         headers: { 'content-type': 'application/json' },
                         body: JSON.stringify(user)
