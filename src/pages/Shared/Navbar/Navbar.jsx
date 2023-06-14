@@ -69,9 +69,11 @@ const Navbar = () => {
                     </button>
                     {
                         user && <label tabIndex={0} title={user.displayName} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-14 rounded-full">
-                                <img src={user.photoURL} />
-                            </div>
+                            {
+                                user && <div className="w-14 rounded-full">
+                                    <img src={user?.photoURL} />
+                                </div>
+                            }
                         </label>
                     }
                 </div>

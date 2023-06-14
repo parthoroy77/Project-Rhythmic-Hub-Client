@@ -19,7 +19,7 @@ const ManageUsers = () => {
             method: 'PATCH'
         }).then(res => res.json()).then(data => {
             if (data.modifiedCount) {
-                toast.success(`${user.displayName} is now ${role}`)
+                toast.success(`Role Updated`)
                 setDisable(true)
                 refetch();
             }

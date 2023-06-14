@@ -5,8 +5,8 @@ const PopularInstructorCard = ({ item }) => {
     return (
         <>
             <div className=" bg-base-100 border-dashed border-[3px] flex flex-col justify-between rounded-md shadow-md hover:shadow-xl">
-                <figure className='px-5 py-4'>
-                    <img src={classImg} className='rounded-2xl w-full' alt="Shoes" />
+                <figure className='px-5 py-4 '>
+                    <img src={classImg} className='rounded-2xl h-[250px] w-full' alt="Shoes" />
                 </figure>
                 <div className="mb-5 text-center">
                     <h2 className='text-2xl text-black font-bold font-serif'>{instructorName}</h2>

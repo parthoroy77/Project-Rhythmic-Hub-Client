@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'lottie-react'
 import animation from '../../assets/Animation/login.json'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from 'react-icons/fa'
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
@@ -9,6 +9,9 @@ import { toast } from 'react-hot-toast';
 const Registration = () => {
     const { createUser, profileUpdate } = useAuth()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const location = useLocation();
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname || '/';
     const onSubmit = data => {
         if (data.password === data.confirmPassword) {
             createUser(data.email, data.password).then(result => {
@@ -23,6 +26,7 @@ const Registration = () => {
                         if (data.insertedId) {
                             toast.success("User Created Successfully")
                             reset()
+                            navigate(from, { replace: true })
                         }
                     })
                 }).catch(err => { })

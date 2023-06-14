@@ -34,6 +34,7 @@ const AddClass = () => {
                 }).then(res => res.json()).then(data => {
                     if (data.insertedId) {
                         toast.success('Class Added Successfully')
+                        reset()
                     }
                 })
             }
