@@ -99,7 +99,7 @@ const ManageClass = () => {
                                             onClick={() => handleStatus(item, 'deny')}
                                             className='btn btn-xs btn-accent'>Deny
                                         </button>
-                                        <Link>
+                                        <Link to={`/dashboard/feedback/${item._id}`}>
                                             <button
                                                 disabled={item.status === 'pending'}
                                                 className='btn btn-xs btn-primary'>Feedback
