@@ -7,6 +7,7 @@ import useRole from '../hooks/useRole';
 import { FaBookReader, FaHome, FaStoreAlt, FaUsers } from 'react-icons/fa';
 import { BiMessageSquareAdd, BiSelectMultiple } from 'react-icons/bi';
 import { MdClass, MdPayments } from 'react-icons/md';
+import { Helmet } from 'react-helmet-async';
 
 const DashboardLayout = () => {
     const { user } = useAuth();
@@ -14,6 +15,7 @@ const DashboardLayout = () => {
     const [isRole] = useRole()
     return (
         <>
+            <Helmet><title>RH | Dashboard</title></Helmet>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content ">

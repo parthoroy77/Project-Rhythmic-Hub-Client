@@ -6,6 +6,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa'
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 const Registration = () => {
     const { createUser, profileUpdate } = useAuth()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -42,6 +43,7 @@ const Registration = () => {
             className='bg-accent min-h-[80vh]
             px-4 lg:px-24 py-10
             flex flex-col items-center justify-center lg:flex-row'>
+            <Helmet><title>RH | Registration</title></Helmet>
             <div className='lg:w-1/2 text-center'>
                 <Lottie className='lg:w-[80%]' animationData={animation}></Lottie>
             </div>

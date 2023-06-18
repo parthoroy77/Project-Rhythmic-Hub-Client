@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-hot-toast';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import { Helmet } from 'react-helmet-async';
 const Login = () => {
     const { loginUser } = useAuth()
     const [visible, setVisible] = useState(true)
@@ -25,6 +26,9 @@ const Login = () => {
             className='bg-accent min-h-[80vh]
             px-4 lg:px-24 py-10
             flex flex-col items-center justify-center lg:flex-row'>
+            <Helmet>
+                <title>RH | Login</title>
+            </Helmet>
             <div className='lg:w-1/2 text-center'>
                 <Lottie className='lg:w-[80%]' animationData={animation}></Lottie>
             </div>

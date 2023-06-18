@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import ClassCard from '../../components/ClassCard/ClassCard';
+import { Helmet } from 'react-helmet-async';
 
 const Classes = () => {
     const { data: classes = [] } = useQuery({
@@ -12,6 +13,7 @@ const Classes = () => {
     })
     return (
         <div className='px-4 lg:px-24 my-16'>
+            <Helmet><title>RH | Classes</title></Helmet>
             <div className=' mx-auto text-center'>
                 <h2 className='text-3xl'>
                     Unveiling the Melodic Journey of Our Musical Class

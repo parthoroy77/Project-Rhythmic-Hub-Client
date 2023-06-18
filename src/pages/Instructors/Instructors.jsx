@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import ClassCard from '../../components/ClassCard/ClassCard';
 import InstructorCard from '../../components/InstructorCard/InstructorCard';
+import { Helmet } from 'react-helmet-async';
 
 const Instructors = () => {
     const { data: instructors = [] } = useQuery({
@@ -13,6 +14,7 @@ const Instructors = () => {
     })
     return (
         <div className='px-4 lg:px-24  my-16'>
+            <Helmet><title>RH | Instructors</title></Helmet>
             <div className=' mx-auto text-center'>
                 <h2 className='text-3xl font-semibold font-mono'>
                     Meet Our Expert Instructors <br /> Guiding You Towards Success
