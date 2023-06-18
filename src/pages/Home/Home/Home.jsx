@@ -5,7 +5,7 @@ import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import ClassesList from '../ClassesList/ClassesList';
 const Home = () => {
     return (
-        <div className='px-6 lg:px-24'>
+        <div className=''>
             <Banner></Banner>
             <ClassesList></ClassesList>
             <PopularClass></PopularClass>

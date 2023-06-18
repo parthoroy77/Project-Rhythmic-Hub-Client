@@ -31,7 +31,7 @@ const Navbar = () => {
         }
     }, [isDarkMode]);
     return (
-        <div className='px-4 lg:px-24 shadow-lg rounded-lg '>
+        <div className='px-4 lg:px-24 shadow-lg'>
             <div className="navbar rounded-md ">
                 <div className="navbar-start">
                     <div className="dropdown">

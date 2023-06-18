@@ -1,10 +1,12 @@
 import React from 'react';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init()
 const PopularInstructorCard = ({ item }) => {
     const { _id, className, classImg, instructorName, instructorEmail, instructorImg, status, availableSeats, price, enrolled } = item;
     return (
         <>
-            <div className=" bg-base-100 border-dashed border-[3px] flex flex-col justify-between rounded-md shadow-md hover:shadow-xl">
+            <div data-aos='fade-up' data-aos-duration='1300' className=" bg-base-100 border-dashed border-[3px] flex flex-col justify-between rounded-md shadow-md hover:shadow-xl">
                 <figure className='px-5 py-4 '>
                     <img src={instructorImg} className='rounded-2xl h-[250px] w-full' alt="Shoes" />
                 </figure>

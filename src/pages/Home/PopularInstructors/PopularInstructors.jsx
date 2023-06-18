@@ -11,7 +11,7 @@ const PopularInstructors = () => {
         }
     })
     return (
-        <div className='my-12'>
+        <div className='my-12 px-6 lg:px-24'>
             <div className='text-center font-semibold'>
                 <h4 className='text-xl mb-2'>Learn from the Best!</h4>
                 <h2 className='text-4xl'>Discover Our Renowned Top Instructors</h2>
